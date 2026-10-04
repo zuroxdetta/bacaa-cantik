@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Uwaa ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #160b1d, #48152f, #170b24);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.card {
+    padding: 40px 25px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.heart {
+    font-size: 70px;
+    animation: pulse 1.5s infinite;
+}
+
+h1 {
+    font-size: 42px;
+    margin: 15px 0;
+}
+
+.name {
+    color: #ff8fbe;
+}
+
+p {
+    color: #eee;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+button {
+    margin-top: 20px;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    background: #ff5c98;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #ff78aa;
+}
+
+@keyframes pulse {
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.heart-bg {
+    position: fixed;
+    top: -30px;
+    animation: jatuh linear forwards;
+    pointer-events: none;
+}
+
+@keyframes jatuh {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+
+        <div class="heart">❤️</div>
+
+        <h1>Untuk <span class="name">Uwaa</span></h1>
+
+        <p>
+            Ada sesuatu yang Ell pengen sampaikan
+            dan mungkin selama ini belum pernah Ell
+            ungkapkan dengan benar.
+        </p>
+
+        <p>
+            Jadi sebelum lanjut...
+            Uwaa harus buka halaman berikutnya dulu. ❤️
+        </p>
+
+        <button onclick="lanjut()">
+            Buka untuk Uwaa 💌
+        </button>
+
+    </div>
+</div>
+
+<script>
+function lanjut() {
+
+    // Efek hati
+    for (let i = 0; i < 20; i++) {
+
+        setTimeout(() => {
+
+            const heart = document.createElement("div");
+
+            heart.className = "heart-bg";
+            heart.innerHTML = ["❤️","💕","💗","💖"][Math.floor(Math.random() * 4)];
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (15 + Math.random() * 25) + "px";
+            heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+
+        }, i * 100);
+    }
+
+    // Pindah halaman
+    setTimeout(() => {
+        window.location.href = "pesan.html";
+    }, 800);
+}
+</script>
+
+</body>
+</html>
